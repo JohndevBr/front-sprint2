@@ -5,7 +5,12 @@ class ProdutoService {
   }
 
   obterProdutos() {
-    // TODO: implementar
+    return this._http
+      .get('produtos')
+      .then((produto) => produto)
+      .catch((erro) => {
+        throw new Error(erro);
+      }
+      );
   }
-
 }
